@@ -1,36 +1,43 @@
 # Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+owner: Cristiano1103 # Your GitHub organization or username, where this repository lives
+repo: bytools-upptime # The name of this repository
 
+# 🔹 Sites que serão monitorados
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Test Broken Site
-    url: https://thissitedoesnotexist.koj.co
-  - name: IPv6 test
-    url: forwardemail.net
-    port: 80
-    check: "tcp-ping"
-    ipv6: true
+  - name: BY Tools API
+    url: https://seu-app-railway.up.railway.app/health # Altere para a URL real da sua API
+    method: GET
+    maxResponseTime: 2000 # Tempo máximo de resposta aceitável (em milissegundos)
+    expectedStatusCodes: [200] # Apenas códigos 200 são considerados como sucesso
+    followRedirects: true # Se o endpoint redirecionar, ele seguirá
 
+# 🔹 Configuração do Status Page (Site de status)
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
+  #cname: status.seudominio.com # Se tiver um domínio personalizado, altere aqui
+  baseUrl: /bytools-upptime # Use se NÃO tiver domínio próprio
   logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  name: BY Tools Status
+  introTitle: "**BY Tools Status**"
+  introMessage: "Esta é a página de status da BY Tools, monitorando a API e seus serviços."
+
   navbar:
     - title: Status
       href: /
     - title: GitHub
-      href: https://github.com/$OWNER/$REPO
+      href: https://github.com/seu-usuario-github/status
 
+# 🔹 Frequência das checagens (a cada 5 minutos)
+commitMessages:
+  status: "🔄 Atualizando status"
+  readmeContent: "📝 Atualizando README"
+  responseTime: "📊 Atualizando tempo de resposta"
+  graphs: "📈 Atualizando gráficos"
+
+# 🔹 Configuração de Notificações (Opcional)
+notifications:
+  - type: discord
+    webhookUrl: "https://discord.com/api/webhooks/SEU_WEBHOOK"
+  - type: email
+    to: "seu-email@gmail.com"
 # Upptime also supports notifications, assigning issues, and more
 # See https://upptime.js.org/docs/configuration
