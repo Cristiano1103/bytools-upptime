@@ -1,7 +1,7 @@
 url: https://seu-app-railway.up.railway.app/health
-status: degraded
+status: down
 code: 404
-responseTime: 4862
-lastUpdated: 2025-05-02T03:59:57.449Z
+responseTime: 395
+lastUpdated: 2025-05-02T04:23:32.223Z
 startTime: 2025-03-16T22:34:55.588Z
 generator: Upptime <https://github.com/upptime/upptime>
